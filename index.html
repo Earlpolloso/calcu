@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-in-One Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        #calculator {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div id="calculator">
+    <h2>All-in-One Calculator</h2>
+    <input type="text" id="input" placeholder="Enter your calculation here...">
+    <button onclick="calculate()">Calculate</button>
+    <h3>Result:</h3>
+    <div id="result"></div>
+</div>
+
+<script>
+    function calculate() {
+        const input = document.getElementById('input').value;
+        try {
+            const result = eval(input);
+            document.getElementById('result').innerText = result;
+        } catch (error) {
+            document.getElementById('result').innerText = 'Error: Invalid Input';
+        }
+    }
+</script>
+
+</body>
+</html>
